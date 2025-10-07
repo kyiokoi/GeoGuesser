@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.env
+.conda/
+
+# Data, models, large artifacts
+/data/
+/models/
+outputs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS & editor
+.DS_Store
+Thumbs.db
+.vscode/
