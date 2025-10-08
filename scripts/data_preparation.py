@@ -3,13 +3,15 @@ Simple data preparation script:
 - Crops images to 16:9 aspect ratio
 - Splits into Training/Validation/Testing (70/15/15)
 - Saves to Data/Processed/
+
+NOTE: Run data_balancing.py first to create balanced dataset!
 """
 import random
 from pathlib import Path
 from PIL import Image, ImageOps
 
 # Config
-INPUT_DIR = Path("Data/Raw")
+INPUT_DIR = Path("Data/Balanced")  # Uses balanced data (run data_balancing.py first)
 OUTPUT_DIR = Path("Data/Processed")
 TRAIN_RATIO = 0.70
 VAL_RATIO = 0.15
