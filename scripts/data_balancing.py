@@ -12,8 +12,8 @@ from tqdm import tqdm
 # Config
 INPUT_DIR = Path("Data/Raw")
 OUTPUT_DIR = Path("Data/Balanced")
-TARGET_MIN = 200  # Minimum images per class
-TARGET_MAX = 300  # Maximum images per class
+TARGET_MIN = 500  # Minimum images per class
+TARGET_MAX = 600  # Maximum images per class
 SEED = 42
 
 CLASSES = ["Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand"]

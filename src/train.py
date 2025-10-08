@@ -10,16 +10,26 @@ from pathlib import Path
 from tqdm import tqdm
 import json
 
-from model import create_model
+# Import model files (try improved models first)
+try:
+    from model_improved import create_model, count_parameters  # Best models
+except ImportError:
+    try:
+        from model_custom import create_model, count_parameters  # Custom models
+    except ImportError:
+        from model import create_model, count_parameters  # Fallback
 
 
 # Config
 DATA_DIR = Path("Data/Processed")
 MODEL_DIR = Path("models")
 BATCH_SIZE = 32
-EPOCHS = 10
+EPOCHS = 25
 LEARNING_RATE = 0.001
-IMG_SIZE = 224  # ResNet expects 224x224
+IMG_SIZE = 224  # Standard input size
+
+# Model selection: "resnet18"
+MODEL_TYPE = "resnet18"
 
 CLASSES = ["Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand"]
 
@@ -125,8 +135,9 @@ def train():
         json.dump(class_to_idx, f, indent=2)
     
     # Create model
-    model = create_model(num_classes=len(CLASSES), pretrained=True)
+    model = create_model(num_classes=len(CLASSES), model_type=MODEL_TYPE, pretrained=(MODEL_TYPE=="resnet18"))
     model = model.to(device)
+    print(f"Model: {MODEL_TYPE} ({count_parameters(model):,} parameters)")
     
     # Loss and optimizer
     criterion = nn.CrossEntropyLoss()

@@ -42,8 +42,8 @@ def evaluate():
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=2)
     print(f"Test samples: {len(test_dataset)}")
     
-    # Load model
-    model = create_model(num_classes=len(class_to_idx))
+    # Load model (using original model.py - ResNet18)
+    model = create_model(num_classes=len(class_to_idx), pretrained=False)
     model.load_state_dict(torch.load(MODEL_DIR / "best_model.pt", map_location=device))
     model = model.to(device)
     model.eval()
