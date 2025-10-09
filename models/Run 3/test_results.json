@@ -1,0 +1,54 @@
+{
+  "test_accuracy": 56.888888888888886,
+  "classification_report": {
+    "Indonesia": {
+      "precision": 0.4606741573033708,
+      "recall": 0.5466666666666666,
+      "f1-score": 0.5,
+      "support": 75.0
+    },
+    "Laos": {
+      "precision": 0.96875,
+      "recall": 0.8266666666666667,
+      "f1-score": 0.8920863309352518,
+      "support": 75.0
+    },
+    "Malaysia": {
+      "precision": 0.5517241379310345,
+      "recall": 0.21333333333333335,
+      "f1-score": 0.3076923076923077,
+      "support": 75.0
+    },
+    "Philippines": {
+      "precision": 0.5555555555555556,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6060606060606061,
+      "support": 75.0
+    },
+    "Singapore": {
+      "precision": 0.4642857142857143,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.6046511627906976,
+      "support": 75.0
+    },
+    "Thailand": {
+      "precision": 0.5789473684210527,
+      "recall": 0.29333333333333333,
+      "f1-score": 0.3893805309734513,
+      "support": 75.0
+    },
+    "accuracy": 0.5688888888888889,
+    "macro avg": {
+      "precision": 0.596656155582788,
+      "recall": 0.5688888888888889,
+      "f1-score": 0.5499784897420524,
+      "support": 450.0
+    },
+    "weighted avg": {
+      "precision": 0.596656155582788,
+      "recall": 0.5688888888888889,
+      "f1-score": 0.5499784897420524,
+      "support": 450.0
+    }
+  }
+}

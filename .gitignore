@@ -10,11 +10,6 @@ __pycache__/
 
 # Data, models, large artifacts
 /data/
-/models/
-outputs/
-
-# Jupyter
-.ipynb_checkpoints/
 
 # OS & editor
 .DS_Store

@@ -1,0 +1,11 @@
+{
+  "run_number": 3,
+  "model_type": "resnet18",
+  "epochs": 25,
+  "learning_rate": 0.005,
+  "batch_size": 32,
+  "img_size": 224,
+  "best_val_accuracy": 61.55555555555556,
+  "final_train_accuracy": 72.23809523809524,
+  "final_val_accuracy": 61.55555555555556
+}
