@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>🌏 GeoGuesser</h1>
-            <p class="subtitle">Upload a photo to predict which Southeast Asian country it was taken in</p>
+            <h1>GeoGuesser</h1>
+            <p class="subtitle">Upload a photo to predict which country it was taken in <br> Currently limited to: Singapore, Malaysia, Indonesia, Laos, Philippines, Thailand</p>
         </header>
 
         <div class="upload-section">
@@ -50,10 +50,6 @@
                 <div id="predictionsList"></div>
             </div>
         </div>
-
-        <footer>
-            <p class="supported-countries">Supported: Indonesia 🇮🇩 • Laos 🇱🇦 • Malaysia 🇲🇾 • Philippines 🇵🇭 • Singapore 🇸🇬 • Thailand 🇹🇭</p>
-        </footer>
     </div>
 
     <script src="{{ url_for('static', filename='main.js') }}"></script>
