@@ -1,16 +1,22 @@
 Process:
-1. Use model.py to create the model
-2. Use train.py to train the model with the images in /data
-3. Use evaluate.py to test the model with the testing split (15%)
+1. Store image data in /data folder
+2. Use data_balancing.py to ensure all countries have similar number of images
+3. Use data_preparation.py to prepare the data (Ensures all images are the same size)
+4. Use model.py to create the model
+5. Use train.py to train the model with the images in /data
+6. Use evaluate.py to test the model with the testing split (15%)
 
 
 Model iterations:
 
 1. 10 epochs, 0.001 learning rate
-Highest test accuracy: 60%
+Test accuracy: 60%
 
 2. 25 epochs, 0.001 learning rate
-Highest test accuracy: 78%
+Test accuracy: 78%
 
 3. 25 epochs, 0.005 learning rate
-Highest test accuracy: 
+Test accuracy: 56.88%
+
+4. 50 epochs, 0.01 learning rate
+Test accuracy: 79.11%

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoGuesser - Southeast Asia Country Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌏 GeoGuesser</h1>
+            <p class="subtitle">Upload a photo to predict which Southeast Asian country it was taken in</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <div class="upload-icon">📷</div>
+                <p class="upload-text">Drag & drop an image here</p>
+                <p class="upload-subtext">or click to browse</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+            
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <img id="previewImage" src="" alt="Preview">
+                <button class="btn-remove" id="removeBtn">✕ Remove Image</button>
+            </div>
+        </div>
+
+        <button class="btn-predict" id="predictBtn" disabled>
+            <span id="btnText">Predict Country</span>
+            <span id="btnLoader" class="loader" style="display: none;"></span>
+        </button>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Prediction Results</h2>
+            <div class="prediction-card">
+                <div class="country-flag" id="countryFlag">🏳️</div>
+                <h3 class="country-name" id="countryName">Unknown</h3>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" id="confidenceFill"></div>
+                </div>
+                <p class="confidence-text">
+                    Confidence: <span id="confidencePercent">0</span>%
+                </p>
+            </div>
+
+            <div class="all-predictions" id="allPredictions">
+                <h4>All Predictions:</h4>
+                <div id="predictionsList"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="supported-countries">Supported: Indonesia 🇮🇩 • Laos 🇱🇦 • Malaysia 🇲🇾 • Philippines 🇵🇭 • Singapore 🇸🇬 • Thailand 🇹🇭</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

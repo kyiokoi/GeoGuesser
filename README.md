@@ -6,7 +6,6 @@ Currently limited to: Singapore, Malaysia, Indonesia, Philippines, Laos, Thailan
 
 ## Tools used
 - Python 
-- Jupyter Notebook (exploration/prototyping)
 - NumPy, pandas (data handling)
 - Matplotlib, Seaborn (visualization)
 - scikit-learn (metrics, utilities)

@@ -16,8 +16,8 @@ from model import create_model, count_parameters  # Fallback
 DATA_DIR = Path("Data/Processed")
 BASE_MODEL_DIR = Path("models")
 BATCH_SIZE = 32
-EPOCHS = 25
-LEARNING_RATE = 0.005
+EPOCHS = 50
+LEARNING_RATE = 0.0005
 IMG_SIZE = 224  # Standard input size
 
 # Model selection: "resnet18"
@@ -89,7 +89,8 @@ def train_epoch(model, loader, criterion, optimizer, device):
     correct = 0
     total = 0
     
-    for images, labels in tqdm(loader, desc="Training", leave=False):
+    pbar = tqdm(loader, desc="Training", leave=False, ncols=100)
+    for images, labels in pbar:
         images, labels = images.to(device), labels.to(device)
         
         optimizer.zero_grad()
@@ -103,6 +104,7 @@ def train_epoch(model, loader, criterion, optimizer, device):
         total += labels.size(0)
         correct += predicted.eq(labels).sum().item()
     
+    pbar.close()
     epoch_loss = running_loss / total
     epoch_acc = 100. * correct / total
     return epoch_loss, epoch_acc
@@ -116,7 +118,8 @@ def validate(model, loader, criterion, device):
     total = 0
     
     with torch.no_grad():
-        for images, labels in tqdm(loader, desc="Validating", leave=False):
+        pbar = tqdm(loader, desc="Validating", leave=False, ncols=100)
+        for images, labels in pbar:
             images, labels = images.to(device), labels.to(device)
             
             outputs = model(images)
@@ -126,6 +129,7 @@ def validate(model, loader, criterion, device):
             _, predicted = outputs.max(1)
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
+        pbar.close()
     
     epoch_loss = running_loss / total
     epoch_acc = 100. * correct / total
@@ -160,9 +164,9 @@ def train():
         json.dump(class_to_idx, f, indent=2)
     
     # Create model
-    model = create_model(num_classes=len(CLASSES), model_type=MODEL_TYPE, pretrained=(MODEL_TYPE=="resnet18"))
+    model = create_model(num_classes=len(CLASSES), pretrained=True)
     model = model.to(device)
-    print(f"Model: {MODEL_TYPE} ({count_parameters(model):,} parameters)")
+    print(f"Model: ResNet18 ({count_parameters(model):,} parameters)")
     
     # Loss and optimizer
     criterion = nn.CrossEntropyLoss()
