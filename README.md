@@ -5,13 +5,14 @@ GeoGuesser is an app that aims to predict countries based off of landscape image
 Currently limited to: Singapore, Malaysia, Indonesia, Philippines, Laos, Thailand
 
 ## Tools used
-- Python 
-- NumPy, pandas (data handling)
-- Matplotlib, Seaborn (visualization)
-- scikit-learn (metrics, utilities)
-- PyTorch + TorchVision (modeling, transfer learning)
-- OpenCV/Pillow (image I/O & preprocessing)
-- Streamlit (simple web app for inference)
+- Python - Core programming language
+- PyTorch + TorchVision - Deep learning framework and pretrained models
+- Pillow (PIL) - Image processing and preprocessing
+- scikit-learn - Evaluation metrics and confusion matrix
+- Matplotlib + Seaborn - Data visualization and confusion matrix plotting
+- Flask - Web application backend
+- tqdm - Progress bars for training
+- NumPy - Numerical operations
 
 ## Skills
 - Data collection & preparation
